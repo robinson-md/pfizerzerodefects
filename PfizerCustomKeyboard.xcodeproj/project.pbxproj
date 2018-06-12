@@ -12,7 +12,33 @@
 		558E867D20D07A03005670E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 558E867B20D07A03005670E8 /* Main.storyboard */; };
 		558E867F20D07A0A005670E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 558E867E20D07A0A005670E8 /* Assets.xcassets */; };
 		558E868220D07A0A005670E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 558E868020D07A0A005670E8 /* LaunchScreen.storyboard */; };
+		558E869020D07ABC005670E8 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558E868F20D07ABC005670E8 /* KeyboardViewController.swift */; };
+		558E869420D07ABC005670E8 /* ZeroDefectsKeyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 558E868D20D07ABC005670E8 /* ZeroDefectsKeyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		558E869220D07ABC005670E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 558E866C20D07A03005670E8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 558E868C20D07ABC005670E8;
+			remoteInfo = ZeroDefectsKeyboard;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		558E869820D07ABC005670E8 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				558E869420D07ABC005670E8 /* ZeroDefectsKeyboard.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		558E867420D07A03005670E8 /* PfizerCustomKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PfizerCustomKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,10 +48,20 @@
 		558E867E20D07A0A005670E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		558E868120D07A0A005670E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		558E868320D07A0A005670E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		558E868D20D07ABC005670E8 /* ZeroDefectsKeyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ZeroDefectsKeyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		558E868F20D07ABC005670E8 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		558E869120D07ABC005670E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		558E867120D07A03005670E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		558E868A20D07ABC005670E8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				558E867620D07A03005670E8 /* PfizerCustomKeyboard */,
+				558E868E20D07ABC005670E8 /* ZeroDefectsKeyboard */,
 				558E867520D07A03005670E8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				558E867420D07A03005670E8 /* PfizerCustomKeyboard.app */,
+				558E868D20D07ABC005670E8 /* ZeroDefectsKeyboard.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -64,6 +102,15 @@
 			path = PfizerCustomKeyboard;
 			sourceTree = "<group>";
 		};
+		558E868E20D07ABC005670E8 /* ZeroDefectsKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				558E868F20D07ABC005670E8 /* KeyboardViewController.swift */,
+				558E869120D07ABC005670E8 /* Info.plist */,
+			);
+			path = ZeroDefectsKeyboard;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,15 +121,34 @@
 				558E867020D07A03005670E8 /* Sources */,
 				558E867120D07A03005670E8 /* Frameworks */,
 				558E867220D07A03005670E8 /* Resources */,
+				558E869820D07ABC005670E8 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				558E869320D07ABC005670E8 /* PBXTargetDependency */,
 			);
 			name = PfizerCustomKeyboard;
 			productName = PfizerCustomKeyboard;
 			productReference = 558E867420D07A03005670E8 /* PfizerCustomKeyboard.app */;
 			productType = "com.apple.product-type.application";
+		};
+		558E868C20D07ABC005670E8 /* ZeroDefectsKeyboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 558E869520D07ABC005670E8 /* Build configuration list for PBXNativeTarget "ZeroDefectsKeyboard" */;
+			buildPhases = (
+				558E868920D07ABC005670E8 /* Sources */,
+				558E868A20D07ABC005670E8 /* Frameworks */,
+				558E868B20D07ABC005670E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZeroDefectsKeyboard;
+			productName = ZeroDefectsKeyboard;
+			productReference = 558E868D20D07ABC005670E8 /* ZeroDefectsKeyboard.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -95,6 +161,9 @@
 				ORGANIZATIONNAME = Pfizer;
 				TargetAttributes = {
 					558E867320D07A03005670E8 = {
+						CreatedOnToolsVersion = 9.4;
+					};
+					558E868C20D07ABC005670E8 = {
 						CreatedOnToolsVersion = 9.4;
 					};
 				};
@@ -113,6 +182,7 @@
 			projectRoot = "";
 			targets = (
 				558E867320D07A03005670E8 /* PfizerCustomKeyboard */,
+				558E868C20D07ABC005670E8 /* ZeroDefectsKeyboard */,
 			);
 		};
 /* End PBXProject section */
@@ -128,6 +198,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		558E868B20D07ABC005670E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -140,7 +217,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		558E868920D07ABC005670E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				558E869020D07ABC005670E8 /* KeyboardViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		558E869320D07ABC005670E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 558E868C20D07ABC005670E8 /* ZeroDefectsKeyboard */;
+			targetProxy = 558E869220D07ABC005670E8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		558E867B20D07A03005670E8 /* Main.storyboard */ = {
@@ -279,6 +372,7 @@
 		558E868720D07A0A005670E8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 287TS9B2H2;
@@ -297,6 +391,7 @@
 		558E868820D07A0A005670E8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 287TS9B2H2;
@@ -307,6 +402,44 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pfizer.PfizerCustomKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		558E869620D07ABC005670E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 287TS9B2H2;
+				INFOPLIST_FILE = ZeroDefectsKeyboard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pfizer.PfizerCustomKeyboard.ZeroDefectsKeyboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		558E869720D07ABC005670E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 287TS9B2H2;
+				INFOPLIST_FILE = ZeroDefectsKeyboard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pfizer.PfizerCustomKeyboard.ZeroDefectsKeyboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -329,6 +462,15 @@
 			buildConfigurations = (
 				558E868720D07A0A005670E8 /* Debug */,
 				558E868820D07A0A005670E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		558E869520D07ABC005670E8 /* Build configuration list for PBXNativeTarget "ZeroDefectsKeyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				558E869620D07ABC005670E8 /* Debug */,
+				558E869720D07ABC005670E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
