@@ -8,9 +8,25 @@
 
 import UIKit
 
+struct PfizerButton {
+    let text, type: String
+
+    init(_ text: String) {
+        self.text = text
+        self.type = ""
+    }
+}
+
+
 class KeyboardViewController: UIInputViewController {
 
     @IBOutlet var nextKeyboardButton: UIButton!
+    
+
+    // Pfizer Buttons
+    let buttons = [
+        PfizerButton("Fix"), PfizerButton("Say"), PfizerButton("Prevent")
+    ]
     
     override func updateViewConstraints() {
         super.updateViewConstraints()
@@ -34,6 +50,12 @@ class KeyboardViewController: UIInputViewController {
         
         self.nextKeyboardButton.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
         self.nextKeyboardButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        
+        
+        // Load custom keys
+        attachButtonsToKeyboard()
+//        let button = self.createButtonWithTitle("MyButton")
+//        self.view.addSubview(button)
     }
     
     override func didReceiveMemoryWarning() {
@@ -57,5 +79,38 @@ class KeyboardViewController: UIInputViewController {
         }
         self.nextKeyboardButton.setTitleColor(textColor, for: [])
     }
-
+    
+    
+    func createButtonWithTitle(_ title: String) -> UIButton {
+        
+        let button = UIButton(type: .roundedRect)
+        button.setTitle(title, for: .normal)
+        button.sizeToFit()
+        button.setTitleColor(UIColor.blue, for: .normal)
+        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+    
+        //    button.frame =  (0, 0, 20, 20)
+        //    button.setTranslatesAutoresizingMaskIntoConstraints(false)
+        //    button.backgroundColor = UIColor(white: 1.0, alpha: 1.0)
+        //    button.setTitleColor(UIColor.darkGrayColor(), forState: .Normal)
+        //    button.addTarget(self, action: "didTapButton:", forControlEvents: .TouchUpInside)
+        
+        return button
+    }
+    
+    @IBAction func didTapButton(sender: UIButton) {
+        let button = sender
+        let title = button.title(for: .normal)
+        let proxy = self.textDocumentProxy
+        
+        proxy.insertText(title!)
+    }
+    
+    func attachButtonsToKeyboard() {
+        for pfizerButton in buttons {
+            let button = self.createButtonWithTitle(pfizerButton.text)
+            self.view.addSubview(button)
+        }
+    }
+    
 }
