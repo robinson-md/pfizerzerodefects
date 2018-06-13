@@ -25,7 +25,9 @@ class KeyboardViewController: UIInputViewController {
 
     // Pfizer Buttons
     let buttons = [
-        PfizerButton("Fix"), PfizerButton("Say"), PfizerButton("Prevent")
+        PfizerButton("Fix"),
+//        PfizerButton("Say"),
+//        PfizerButton("Prevent")
     ]
     
     override func updateViewConstraints() {
@@ -54,8 +56,7 @@ class KeyboardViewController: UIInputViewController {
         
         // Load custom keys
         attachButtonsToKeyboard()
-//        let button = self.createButtonWithTitle("MyButton")
-//        self.view.addSubview(button)
+        
     }
     
     override func didReceiveMemoryWarning() {

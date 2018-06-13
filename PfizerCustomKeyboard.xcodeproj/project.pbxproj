@@ -41,6 +41,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		55420EAB20D174CD00FD29FB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		558E867420D07A03005670E8 /* PfizerCustomKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PfizerCustomKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		558E867720D07A03005670E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		558E867920D07A03005670E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +75,7 @@
 		558E866B20D07A03005670E8 = {
 			isa = PBXGroup;
 			children = (
+				55420EAB20D174CD00FD29FB /* README.md */,
 				558E867620D07A03005670E8 /* PfizerCustomKeyboard */,
 				558E868E20D07ABC005670E8 /* ZeroDefectsKeyboard */,
 				558E867520D07A03005670E8 /* Products */,
