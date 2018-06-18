@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		556D861320D318610037BA59 /* Keyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 556D861220D318610037BA59 /* Keyboard.xib */; };
+		556D861520D320E90037BA59 /* Keyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 556D861420D320E90037BA59 /* Keyboard.storyboard */; };
+		556D861620D323A40037BA59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 558E867E20D07A0A005670E8 /* Assets.xcassets */; };
+		556D861820D337920037BA59 /* EmojiButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556D861720D337920037BA59 /* EmojiButton.swift */; };
 		558E867820D07A03005670E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558E867720D07A03005670E8 /* AppDelegate.swift */; };
 		558E867A20D07A03005670E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558E867920D07A03005670E8 /* ViewController.swift */; };
 		558E867D20D07A03005670E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 558E867B20D07A03005670E8 /* Main.storyboard */; };
@@ -42,6 +46,9 @@
 
 /* Begin PBXFileReference section */
 		55420EAB20D174CD00FD29FB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		556D861220D318610037BA59 /* Keyboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Keyboard.xib; sourceTree = "<group>"; };
+		556D861420D320E90037BA59 /* Keyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Keyboard.storyboard; sourceTree = "<group>"; };
+		556D861720D337920037BA59 /* EmojiButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiButton.swift; sourceTree = "<group>"; };
 		558E867420D07A03005670E8 /* PfizerCustomKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PfizerCustomKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		558E867720D07A03005670E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		558E867920D07A03005670E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +79,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		55162F7D20D1CC600009458A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		558E866B20D07A03005670E8 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +93,7 @@
 				558E867620D07A03005670E8 /* PfizerCustomKeyboard */,
 				558E868E20D07ABC005670E8 /* ZeroDefectsKeyboard */,
 				558E867520D07A03005670E8 /* Products */,
+				55162F7D20D1CC600009458A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,6 +124,9 @@
 			children = (
 				558E868F20D07ABC005670E8 /* KeyboardViewController.swift */,
 				558E869120D07ABC005670E8 /* Info.plist */,
+				556D861220D318610037BA59 /* Keyboard.xib */,
+				556D861420D320E90037BA59 /* Keyboard.storyboard */,
+				556D861720D337920037BA59 /* EmojiButton.swift */,
 			);
 			path = ZeroDefectsKeyboard;
 			sourceTree = "<group>";
@@ -204,6 +222,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				556D861320D318610037BA59 /* Keyboard.xib in Resources */,
+				556D861520D320E90037BA59 /* Keyboard.storyboard in Resources */,
+				556D861620D323A40037BA59 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				556D861820D337920037BA59 /* EmojiButton.swift in Sources */,
 				558E869020D07ABC005670E8 /* KeyboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
