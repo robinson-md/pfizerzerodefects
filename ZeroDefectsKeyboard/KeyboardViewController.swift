@@ -11,15 +11,21 @@ import UIKit
 
 class KeyboardViewController: UIInputViewController {
 
-    @IBOutlet var nextKeyboardButton: UIButton!
-    
+    var nextKeyboardButton: UIButton! = {
+        let nextButton = UIButton(type: .system)
+        
+        nextButton.setTitle(NSLocalizedString("Next Keyboard", comment: "Title for 'Next Keyboard' button"), for: [])
+        nextButton.sizeToFit()
+        nextButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        nextButton.addTarget(self, action: #selector(handleInputModeList(from:with:)), for: .allTouchEvents)
+        
+        return nextButton
+    }()
 
     // Pfizer Buttons
     let buttons = [
-        EmojiButton(withImageName: "fix").button(),
-        EmojiButton(withImageName: "say").button(),
-        EmojiButton(withImageName: "prevent").button(),
-        EmojiButton(withImageName: "share").button()
+        EmojiButton(emoji: PfizerEmoji.apple).button(),
     ]
     
     override func updateViewConstraints() {
@@ -31,23 +37,8 @@ class KeyboardViewController: UIInputViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Perform custom UI setup here
-        self.nextKeyboardButton = UIButton(type: .system)
-        
-        self.nextKeyboardButton.setTitle(NSLocalizedString("Next Keyboard", comment: "Title for 'Next Keyboard' button"), for: [])
-        self.nextKeyboardButton.sizeToFit()
-        self.nextKeyboardButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        self.nextKeyboardButton.addTarget(self, action: #selector(handleInputModeList(from:with:)), for: .allTouchEvents)
-        
-        self.view.addSubview(self.nextKeyboardButton)
-        
-        self.nextKeyboardButton.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
-        self.nextKeyboardButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-        
-        
-        // Load custom keys
-        attachButtonsToKeyboard()
+        self.attachElements()
+        self.initLayout()
     }
     
     override func didReceiveMemoryWarning() {
@@ -57,10 +48,26 @@ class KeyboardViewController: UIInputViewController {
     
     override func textWillChange(_ textInput: UITextInput?) {
         // The app is about to change the document's contents. Perform any preparation here.
+//        print("Text will change \(textInput))")
+        
     }
     
     override func textDidChange(_ textInput: UITextInput?) {
         // The app has just changed the document's contents, the document context has been updated.
+        
+//        let view = textInput?.hasTex
+        
+        if textInput != nil{
+            let initialPosition = textInput!.position(from: textInput!.endOfDocument, offset: 1)
+            let endPos = textInput!.endOfDocument
+            
+            let t = textInput?.text(in: (textInput?.textRange(from: initialPosition!, to: endPos))!)
+            
+            print("Text did change ")
+            print(t)
+            print(initialPosition)
+        }
+     
         
         var textColor: UIColor
         let proxy = self.textDocumentProxy
@@ -72,18 +79,56 @@ class KeyboardViewController: UIInputViewController {
         self.nextKeyboardButton.setTitleColor(textColor, for: [])
     }
     
-    @IBAction func didTapButton(sender: UIButton) {
+    @IBAction func tapButton(_ sender: UIButton) {
+        
         let button = sender
-        let title = button.title(for: .normal)
+//        let title = button.title(for: .normal)
         let proxy = self.textDocumentProxy
         
-        proxy.insertText(title!)
+        
+//        let data = button.currentTitle!.data(using: String.Encoding.nonLossyASCII)
+//
+//        var message = String(data: data!, encoding: String.Encoding.utf8)
+        
+//        print(message!)
+//
+//        let trimmed = message?.trimmingCharacters(in: .whitespacesAndNewlines)
+//        let data1 = trimmed?.data(using: String.Encoding.utf8)
+//        message = String(data: data1!, encoding: String.Encoding.nonLossyASCII)
+
+        let message = button.currentTitle
+        proxy.insertText(message!)
+
     }
+
     
     func attachButtonsToKeyboard() {
+        
+        let square = UIView(frame: CGRect(x: 0, y: 0, width: 60, height: 60))
+        square.backgroundColor = .red
+        
         for pfizerButton in buttons {
+            pfizerButton.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
             self.view.addSubview(pfizerButton)
         }
+    }
+    
+    /*
+    * Attach UI element to current view
+    */
+    func attachElements() {
+        self.view.addSubview(self.nextKeyboardButton)
+        
+        self.attachButtonsToKeyboard()
+    }
+    
+    
+    /*
+    * Set layout constraints for element in the view
+    */
+    func initLayout() {
+        self.nextKeyboardButton.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
+        self.nextKeyboardButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
     }
     
 }

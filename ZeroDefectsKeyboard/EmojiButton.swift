@@ -6,30 +6,34 @@
 //  Copyright © 2018 Pfizer. All rights reserved.
 //
 
-//import Foundation
 import UIKit
+
+enum PfizerEmoji: String {
+    case evernote = "\u{e902}"
+    case gmail = "\u{e905}"
+    case apple = "\u{e901}"
+    case android = "\u{e900}"
+    case facebook = "\u{e903}"
+    case visualstudiocode = "\u{e908}"
+}
 
 class EmojiButton{
     
     
-    var btn: UIButton!
-    var image: UIImage!
+    var emojibtn: UIButton!
+    var emojiFontName = "ZeroDefectsEmojiFonts"
     
+    init(emoji: PfizerEmoji){
+        emojibtn = UIButton()
+        let title = emoji.rawValue
     
-    init(withImageName imageName: String){
-        btn = UIButton()
-        image = UIImage(named: imageName)
-        
-        btn.frame = CGRect(x: 15, y: 54, width: 60, height: 60)
-        btn.setImage(image, for: .normal)
-        btn.layer.cornerRadius = 5
-        btn.contentEdgeInsets = UIEdgeInsets(top: 5,left: 5, bottom: 5, right: 5)
-        btn.backgroundColor = UIColor.darkGray
+        emojibtn.frame = CGRect(x: 0, y: 0, width: 60, height: 60)
+        emojibtn.titleLabel?.font = UIFont(name: self.emojiFontName, size: 30)
+        emojibtn.setTitle(title, for: .normal)
     }
-    
  
     func button() ->  UIButton {
-         return btn
+         return emojibtn
     }
     
 }
