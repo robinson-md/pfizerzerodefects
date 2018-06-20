@@ -48,14 +48,11 @@ class KeyboardViewController: UIInputViewController {
     
     override func textWillChange(_ textInput: UITextInput?) {
         // The app is about to change the document's contents. Perform any preparation here.
-//        print("Text will change \(textInput))")
         
     }
     
     override func textDidChange(_ textInput: UITextInput?) {
         // The app has just changed the document's contents, the document context has been updated.
-        
-//        let view = textInput?.hasTex
         
         if textInput != nil{
             let initialPosition = textInput!.position(from: textInput!.endOfDocument, offset: 1)
@@ -80,30 +77,16 @@ class KeyboardViewController: UIInputViewController {
     }
     
     @IBAction func tapButton(_ sender: UIButton) {
-        
         let button = sender
-//        let title = button.title(for: .normal)
         let proxy = self.textDocumentProxy
-        
-        
-//        let data = button.currentTitle!.data(using: String.Encoding.nonLossyASCII)
-//
-//        var message = String(data: data!, encoding: String.Encoding.utf8)
-        
-//        print(message!)
-//
-//        let trimmed = message?.trimmingCharacters(in: .whitespacesAndNewlines)
-//        let data1 = trimmed?.data(using: String.Encoding.utf8)
-//        message = String(data: data1!, encoding: String.Encoding.nonLossyASCII)
-
         let message = button.currentTitle
+        
         proxy.insertText(message!)
 
     }
 
     
     func attachButtonsToKeyboard() {
-        
         let square = UIView(frame: CGRect(x: 0, y: 0, width: 60, height: 60))
         square.backgroundColor = .red
         
